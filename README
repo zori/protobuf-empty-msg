@@ -1,1 +1,9 @@
-Protocol buffer definitions compiled with proto compiler version 2.2.0.
+Unlike in c++ where invoking the MutableExtension(..) method adds the
+extension, I could not find a way to do this in python unless the extending
+message has at least one field (like this: obj.Extensions[Msg.identifier].field
+= ..)
+
+There should be some way of forcing the message to be created (kenton@
+suggested using the SetInParent() method but I could not get it to work).
+
+These protocol buffer definitions were compiled with proto compiler v2.2.0.
