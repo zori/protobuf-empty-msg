@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package req;
+
+option optimize_for = LITE_RUNTIME;
+
+message Request {
+  extensions 1 to 10;
+}
+
+message TaggingRequest {
+  extend Request {
+    optional TaggingRequest tagging = 1;
+  }
+}
+
+message NumberedRequest {
+  extend Request {
+    optional NumberedRequest numbered = 2;
+  }
+  required int32 number = 1;
+}
